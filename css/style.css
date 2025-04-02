@@ -1,0 +1,200 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+ul {
+  list-style: none;
+}
+
+button {
+  font-family: inherit;
+  border: none;
+  background: none;
+}
+
+body {
+  font-family: sans-serif;
+  margin-top: 100px;
+}
+
+.videoSlider {
+  max-width: 1178px;
+  padding: 0 24px;
+  margin: 0 auto;
+}
+.videoSlider .videos {
+  position: relative;
+  overflow-x: auto;
+  display: grid;
+  gap: 16px;
+  grid-auto-flow: column;
+  scroll-behavior: smooth;
+  overscroll-behavior-x: contain;
+  -ms-scroll-snap-type: x mandatory;
+      scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+}
+.videoSlider .videos .video {
+  scroll-snap-align: start;
+  position: relative;
+  overflow: hidden;
+  width: 393px;
+  height: 268px;
+  border-radius: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+.videoSlider .videos .video video {
+  height: 100%;
+}
+.videoSlider .videos .video .player {
+  opacity: 0;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: linear-gradient(179deg, rgba(0, 0, 0, 0) 5%, rgba(0, 0, 0, 0.5));
+}
+.videoSlider .videos .video .player .info {
+  position: absolute;
+  bottom: 24px;
+  left: 24px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 10px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.videoSlider .videos .video .player .info .play {
+  cursor: pointer;
+  border-radius: 60px;
+  width: 60px;
+  height: 60px;
+  background: #16a3d0;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.videoSlider .videos .video .player .info .play:hover {
+  background-color: #30b5df;
+}
+.videoSlider .videos .video .player .info p {
+  font-size: 15px;
+  line-height: 150%;
+  color: #fff;
+}
+.videoSlider .videos .video:hover .player {
+  opacity: 1;
+}
+.videoSlider .videos .pause .player {
+  opacity: 1;
+}
+.videoSlider .sliderControl {
+  height: 64px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.videoSlider .sliderControl .calcSliders {
+  font-size: 15px;
+  line-height: 133%;
+  color: #6b7680;
+}
+.videoSlider .sliderControl .controlButtons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 12px;
+}
+.videoSlider .sliderControl .controlButtons button {
+  border: 0.5px solid #d1d6db;
+  border-radius: 8px;
+  padding: 8px 14px;
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 133%;
+  color: #111c27;
+  opacity: 0.5;
+}
+.videoSlider .sliderControl .controlButtons .active {
+  cursor: pointer;
+  opacity: 1;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+.videoSlider .sliderControl .controlButtons .active:hover {
+  border-color: #30b5df;
+  color: #30b5df;
+}
+.videoSlider .pageNation {
+  display: none;
+  margin: 0 auto;
+  margin-top: 16px;
+  border: 0.5px solid #d1d6db;
+  border-radius: 8px;
+  padding: 18px 24px;
+  font-weight: 500;
+  font-size: 17px;
+  line-height: 130%;
+  color: #111827;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+.videoSlider .pageNation:active {
+  border-color: #30b5df;
+  color: #30b5df;
+}
+
+@media (max-width: 440px) {
+  .videoSlider {
+    padding: 0 17px;
+  }
+  .videoSlider .videos {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .videoSlider .videos .video {
+    width: 100%;
+  }
+  .videoSlider .sliderControl {
+    display: none;
+  }
+  .videoSlider .pageNation {
+    display: block;
+  }
+}
